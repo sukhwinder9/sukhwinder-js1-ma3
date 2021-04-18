@@ -1,6 +1,8 @@
 //question 1
 
 const sum = (a, b) => a % b;
+
+
 //question 2
 const url = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating";
 const divcontainer = document.querySelector(".results");
@@ -15,16 +17,16 @@ async function games() {
     divcontainer.innerHTML = "";
 
     for (let i = 0; i < answer.length; i++) {
-        console.log(answer[i].name, answer[i].rating, answer[i].tag.length);
+        console.log(answer[i].name, answer[i].rating, answer[i].tags.length);
+
         if (i === 8) {
             break;
         }
 
-        divcontainer.innerHTML += `<div>${answer[i].name}, ${answer[i].name}, ${answer[i].name}</div>`;
+        divcontainer.innerHTML += `<div>${answer[i].name}, ${answer[i].rating}, ${answer[i].tags.length}</div>`;
 
 
     }
 
-
-
 }
+games();
